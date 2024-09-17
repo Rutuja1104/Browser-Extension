@@ -1,0 +1,86 @@
+{
+  "name": "Insiteflow Browser Extension Dev",
+  "version": "0.2.2.50",
+  "manifest_version": 3,
+  "description": "Manage Insiteflow's integration with Web-based EHRs",
+  "icons": {
+    "16": "icon.png",
+    "32": "icon.png",
+    "48": "icon.png",
+    "128": "icon.png"
+  },
+  "action": {
+    "default_popup": "index.html"
+  },
+  "background": {
+    "service_worker": "js/background.js"
+  },
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "/js/*.*",
+        "/css/*.*",
+        "/media/*.*",
+        "icon.png"
+      ],
+      "matches": [
+        "https://*.athenahealth.com/*",
+        "https://*.babylonhealth.com/*",
+        "https://*.babylonpartners.com/*",
+        "https://*.babylontech.co.uk/*",
+        "https://*.partner.practicefusion.com/*",
+        "https://*.mixpanel.com/*",
+        "https://*.openemr.dev.insiteflow.io/*",
+        "https://*.sandbox.eclinicalweb.com/*"
+      ]
+    }
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "https://*.athenahealth.com/*",
+        "https://*.babylonhealth.com/*",
+        "https://*.babylonpartners.com/*",
+        "https://*.babylontech.co.uk/*",
+        "https://*.practicefusion.com/*",
+        "https://*.openemr.dev.insiteflow.io/*",
+        "https://*.sandbox.eclinicalweb.com/*",
+        "https://*.sandbox.eclinicalweb.com/mobiledoc/*"
+      ],
+      "css": [
+        "/css/content.css"
+      ],
+      "js": [
+        "/js/content.js"
+      ]
+    }
+  ],
+  "host_permissions": [
+    "https://*.athenahealth.com/*",
+    "https://*.babylonhealth.com/*",
+    "https://*.babylonpartners.com/*",
+    "https://*.babylontech.co.uk/*",
+    "https://*.insiteflow.io/*",
+    "https://*.openemr.dev.insiteflow.io/*",
+    "https://*.practicefusion.com/*",
+    "https://*.sandbox.eclinicalweb.com/*",
+    "https://*.sandbox.eclinicalweb.com/mobiledoc/*"
+  ],
+  "permissions": [
+    "storage",
+    "cookies",
+    "webRequest",
+    "declarativeNetRequest",
+    "declarativeNetRequestFeedback",
+    "declarativeNetRequestWithHostAccess"
+  ],
+  "declarative_net_request": {
+    "rule_resources": [
+      {
+        "id": "modify_headers",
+        "enabled": true,
+        "path": "rules.json"
+      }
+    ]
+  }
+}

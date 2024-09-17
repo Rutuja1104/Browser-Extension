@@ -1,0 +1,32 @@
+.insiteflow-extension-root {
+  position: fixed;
+  display: flex;
+  width: 500px;
+  top: 155px;
+  right: -500px;
+  visibility: visible;
+  overflow: visible;
+  z-index: 999999999;
+  transition: 0.5s;
+  align-items: flex-start;
+}
+
+.viewportContainer {
+  position: fixed;
+  display: flex;
+}
+
+.viewportContainer.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.toastContainer{
+  position: fixed;
+  display: flex;
+  right: 1%;
+}
+.toastContainer.show {
+  opacity: 1;
+  transform: translateY(0);
+}

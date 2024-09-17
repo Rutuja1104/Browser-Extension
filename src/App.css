@@ -1,0 +1,62 @@
+.popup-container {
+  width: 350px;
+  height: 250px;
+  display: flex;
+  align-items: center;
+  border: 2px solid #686a6d;
+}
+
+.enablement-form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  font-size: 14px;
+  background-color: #f3fdff;
+  height: 85%;
+  padding: 13px;
+}
+
+.enablement-form h2 {
+  margin-top: 0px;
+  margin-bottom: 5px;
+}
+
+.enablement-form label {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.enablement-form textarea {
+  width: 310px;
+  height: 150px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  resize: vertical;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  color: #333;
+  background-color: #f8f8f8;
+  box-sizing: border-box;
+  margin-bottom: 16px;
+}
+
+.enablement-form textarea:focus {
+  border-color: #8fabc9;
+  border-width: 2px;
+  outline: none;
+}
+
+.enablement-form button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+ 
+.errorAlert{
+  margin-block-start: -1em;
+  color: red;
+  font-size: 12px;
+}
